@@ -8,6 +8,9 @@ import (
 func main() {
 	fmt.Println("Привет, это умный калькулятор(почти)")
 	var number1 float64
+	var number2 float64
+	var action string
+
 	fmt.Print("Введи 1 число: ")
 	_, err := fmt.Scan(&number1)
 	if err != nil {
@@ -19,7 +22,6 @@ func main() {
 		fmt.Printf("Введено дробное число: %g\n", number1)
 	}
 
-	var number2 float64
 	fmt.Print("Введите 2 число: ")
 	_, err = fmt.Scan(&number2)
 	if err != nil {
@@ -30,9 +32,10 @@ func main() {
 	} else {
 		fmt.Printf("Введено дробное число: %g\n", number2)
 	}
-	var action string
+
 	fmt.Print("Выберите действие над числами(*, /, +, -): ")
 	fmt.Scan(&action)
+
 	switch action {
 	case "*":
 		fmt.Printf("%g * %g = %g\n", number1, number2, number1*number2)
